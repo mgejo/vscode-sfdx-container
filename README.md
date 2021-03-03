@@ -9,7 +9,7 @@ VSCode SFDX Container is a set of configuration files for Docker images used for
 The files included are a Docker image to build the containers, and a devcontainer.json file with configurations.
 
 
-The containers have npm, sfdx, and git installed
+The containers have Java 11, npm, SFDX, and Git installed
 
 ## Reasoning
 When developing multiple projects, it's easy to mistakenly make a commit to the wrong org, because SFDX may preserve the configuration of another project.
