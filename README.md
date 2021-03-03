@@ -23,4 +23,4 @@ There is a [Salesforce official image](https://hub.docker.com/r/salesforce/sales
 
 Follow the steps [here](https://code.visualstudio.com/docs/remote/containers)
 
-Create a folder with a meaningful name for your project and place the .devcontainer folder there, then open the project folder with VSCode, wait for the prompt to suggest to reopen in container, and click the corresponding button. From there you may authorize an org to start development.
+Create a folder with a meaningful name for your project and place the .devcontainer folder there, then open the project folder with VSCode, wait for the prompt to suggest to reopen in container, and click the corresponding button. Check the extensions tab to install all the extensions you want in the container, and after they finish installing you may authorize an org to start development.
