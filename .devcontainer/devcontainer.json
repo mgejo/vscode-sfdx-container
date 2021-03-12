@@ -19,10 +19,10 @@
     ],
     "workspaceMount": "source=${localWorkspaceFolder},target=/root/${localWorkspaceFolderBasename},type=bind",
     "workspaceFolder": "/root/${localWorkspaceFolderBasename}",
+    "postCreateCommand": "cd /root && sfdx force:project:create --projectname ${localWorkspaceFolderBasename} --manifest && cd ${localWorkspaceFolderBasename} && npm install --force && npm install --save-dev --save-exact prettier prettier-plugin-apex",
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [],
     // Uncomment the next line to run commands after the container is created - for example installing curl.
-    "postCreateCommand": "cd /root && sfdx force:project:create --projectname ${localWorkspaceFolderBasename} --manifest && cd ${localWorkspaceFolderBasename} && npm install && npm install --save-dev --save-exact prettier prettier-plugin-apex",
     // Uncomment when using a ptrace-based debugger like C++, Go, and Rust
     // "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
     // Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
