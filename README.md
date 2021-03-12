@@ -37,6 +37,8 @@ Follow the steps [here](https://code.visualstudio.com/docs/remote/containers)
 
 Create a folder with a meaningful name for your project and place the .devcontainer folder there, then open the project folder with VSCode, wait for the prompt to suggest to reopen in container, and click the corresponding button. The first time you build the image can take some time. Check the extensions tab to install all the extensions you want in the container, and after they finish installing you may authorize an org to start development.
 
+Keep in mind that the building of the images takes a couple minutes.
+
 To change to another container, first disconnect the one that is runnning, then open the project folder with VSCode and click the button when prompted.
 
 ## Optimization
@@ -44,7 +46,3 @@ To change to another container, first disconnect the one that is runnning, then 
 When you open a SFDX project folder, the Salesforce Extension Pack extensions load before Remote - Container, thus delaying the "Reopen in container" prompt.
 
 In order to mitigate this, you can uninstall the Salesforce Extension pack from VSCode when disconnected from any containers and they will be loaded only when VSCode attaches to a container.
-
-## Clearing the build cache
-
-Every once in a while there may be conflicts during building new images due to having old software versions in the docker cache. To clear the cache, run the command *docker build prune -a* from the host. Keep in mind that the first time you build the image after this will take a while.
