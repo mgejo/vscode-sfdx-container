@@ -9,7 +9,19 @@ VSCode SFDX Container is a set of configuration files for Docker images used for
 The files included are a Docker image to build the containers, and a devcontainer.json file with configurations.
 
 
-The containers have Java 11, npm, SFDX, and Git installed
+## Programs installed in the containers
+
+- Java 11
+- npm
+- SFDX
+- Git
+
+## VSCode extensions installed in the containers
+
+- [Salesforce Extension Pack] (https://marketplace.visualstudio.com/items?itemName=salesforce.salesforcedx-vscode)
+- [Apex Log Analyzer] (https://marketplace.visualstudio.com/items?itemName=financialforce.lana)
+- [Apex PMD] (https://marketplace.visualstudio.com/items?itemName=chuckjonas.apex-pmd)
+- [Prettier - Code formatter] (https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
 ## Reasoning
 When developing multiple projects, it's easy to mistakenly make a commit to the wrong org, because SFDX may preserve the configuration of another project.
