@@ -19,7 +19,7 @@
     ],
     "workspaceMount": "source=${localWorkspaceFolder},target=/root/${localWorkspaceFolderBasename},type=bind",
     "workspaceFolder": "/root/${localWorkspaceFolderBasename}",
-    "postCreateCommand": "cd /root && sfdx force:project:create --projectname ${localWorkspaceFolderBasename} --manifest && cd ${localWorkspaceFolderBasename} && npm install --force && npm install --save-dev --save-exact prettier prettier-plugin-apex",
+    "postCreateCommand": "cd /root && sfdx force:project:create --projectname ${localWorkspaceFolderBasename} --manifest && cd ${localWorkspaceFolderBasename} && rm package.json && npm install --save-exact prettier prettier-plugin-apex",
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [],
     // Uncomment the next line to run commands after the container is created - for example installing curl.
