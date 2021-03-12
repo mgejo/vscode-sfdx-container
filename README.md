@@ -37,8 +37,6 @@ Follow the steps [here](https://code.visualstudio.com/docs/remote/containers)
 
 Create a folder with a meaningful name for your project and place the .devcontainer folder there, then open the project folder with VSCode, wait for the prompt to suggest to reopen in container, and click the corresponding button. The first time you build the image can take some time. Check the extensions tab to install all the extensions you want in the container, and after they finish installing you may authorize an org to start development.
 
-Keep in mind that the building of the images takes a couple minutes.
-
 To change to another container, first disconnect the one that is runnning, then open the project folder with VSCode and click the button when prompted.
 
 ## Optimization
