@@ -20,5 +20,5 @@ RUN ln -s /usr/bin/node /usr/local/bin/node
 RUN apt-get autoremove --assume-yes \
     && apt-get clean --assume-yes \
     && rm -rf /var/lib/apt/lists/*
-RUN npm install -g npm
-RUN npm install -g sfdx-cli
+RUN npm install -g npm sfdx-cli
+RUN sfdx plugins:install @salesforce/lwc-dev-server && sfdx plugins:update
