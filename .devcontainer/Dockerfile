@@ -15,7 +15,9 @@ ENV JAVA_HOME="/usr/lib/jvm/jdk-11.0.10+9"
 ENV PATH "$PATH:$JAVA_HOME/bin"
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y \
     git --no-install-recommends \
-    npm --no-install-recommends
+    npm --no-install-recommends \
+    fish --no-install-recommends
+RUN chsh -s /usr/bin/fish
 RUN ln -s /usr/bin/node /usr/local/bin/node
 RUN apt-get autoremove --assume-yes \
     && apt-get clean --assume-yes \
