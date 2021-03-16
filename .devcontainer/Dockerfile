@@ -13,14 +13,21 @@ COPY --from=tarrer /java /usr/lib/jvm
 COPY --from=tarrer /var/lib/apt/lists/ /var/lib/apt/lists/
 ENV JAVA_HOME="/usr/lib/jvm/jdk-11.0.10+9"
 ENV PATH "$PATH:$JAVA_HOME/bin"
-RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y \
-    git --no-install-recommends \
-    npm --no-install-recommends \
-    fish --no-install-recommends
-RUN chsh -s /usr/bin/fish
-RUN ln -s /usr/bin/node /usr/local/bin/node
-RUN apt-get autoremove --assume-yes \
-    && apt-get clean --assume-yes \
-    && rm -rf /var/lib/apt/lists/*
-RUN npm install -g npm sfdx-cli
-RUN sfdx plugins:install @salesforce/lwc-dev-server && sfdx plugins:update
+RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends \
+    git  \
+    npm \
+    fish \
+&& \
+    apt-get autoremove --assume-yes \
+&& \
+    apt-get clean --assume-yes \
+&& \
+    rm -rf /var/lib/apt/lists/* \
+&& \
+    chsh -s /usr/bin/fish \
+&& \
+    ln -s /usr/bin/node /usr/local/bin/node \
+&& \
+    npm install -g npm sfdx-cli \
+&& \
+    sfdx plugins:install @salesforce/lwc-dev-server && sfdx plugins:update
