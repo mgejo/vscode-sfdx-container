@@ -57,4 +57,4 @@ In order to mitigate this, you can uninstall the Salesforce Extension pack from 
 
 ## Cleaning the cache
 
-Every once in a while, it's a good idea to clean the Docker cache so new versions of packages get installed inside the containers. To do so, you can run *docker builder prune -a*
+It's a good idea to clean the Docker cache every once in a while, so new versions of packages get installed inside the containers. To do so, you can run *docker builder prune -a*.
