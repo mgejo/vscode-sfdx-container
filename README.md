@@ -54,3 +54,7 @@ To change to another container, first disconnect the one that is runnning, then 
 When you open a SFDX project folder, the Salesforce Extension Pack extensions load before Remote - Container, thus delaying the "Reopen in container" prompt.
 
 In order to mitigate this, you can uninstall the Salesforce Extension pack from VSCode when disconnected from any containers and they will be loaded only when VSCode attaches to a container.
+
+## Cleaning the cache
+
+Every once in a while, it's a good idea to clean the Docker cache so new versions of packages get installed inside the containers. To do so, you can run *docker builder prune -a*
