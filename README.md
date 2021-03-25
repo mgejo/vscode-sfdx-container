@@ -48,7 +48,7 @@ If developing inside a repository, you may want to add `.devcontainer/*` to `/.g
 
 ## Optimization
 
-When you open a SFDX project folder, the Salesforce Extension Pack extensions load before Remote - Container, thus delaying the "Reopen in container" prompt.
+When you open a SFDX project folder, the Salesforce Extension Pack extensions load before Remote - Container, thus delaying the `Reopen in container` prompt.
 
 In order to mitigate this, you can uninstall the Salesforce Extension pack from VSCode when disconnected from any containers and they will be loaded only when VSCode attaches to a container.
 
