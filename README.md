@@ -15,12 +15,6 @@ The files included are a Docker image to build the containers, and a devcontaine
 - npm
 - SFDX
 - Git
-- fish shell
-
-## npm packages installed
-
-- prettier
-- prettier-plugin-apex 
 
 ## SFDX plugins installed
 
