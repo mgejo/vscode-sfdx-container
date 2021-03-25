@@ -16,15 +16,12 @@ ENV PATH "$PATH:$JAVA_HOME/bin"
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends \
     git  \
     npm \
-    fish \
 && \
     apt-get autoremove --assume-yes \
 && \
     apt-get clean --assume-yes \
 && \
     rm -rf /var/lib/apt/lists/* \
-&& \
-    chsh -s /usr/bin/fish \
 && \
     ln -s /usr/bin/node /usr/local/bin/node \
 && \
