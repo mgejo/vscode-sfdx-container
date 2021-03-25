@@ -45,9 +45,9 @@ There is a [Salesforce official image](https://hub.docker.com/r/salesforce/sales
 
 Follow the steps [here](https://code.visualstudio.com/docs/remote/containers)
 
-Create a folder with a meaningful name for your project and place the .devcontainer folder there, then open the project folder with VSCode, wait for the prompt to suggest to reopen in container, and click the corresponding button. The first time you build the image can take some time. Check the extensions tab to install all the extensions you want in the container, and after they finish installing you may authorize an org to start development. Prettier won't work until you reload the editor window.
+Create a folder with a meaningful name for your project and place the .devcontainer folder there, then open the project folder with VSCode, wait for the prompt to suggest to reopen in container, and click the corresponding button. The first time you build the image can take some time. Check the extensions tab to install all the extensions you want in the container.
 
-To change to another container, first disconnect the one that is runnning, then open the project folder with VSCode and click the button when prompted.
+To change to another container, first disconnect the one that is runnning, then open the project folder with VSCode and click the button when prompted. A good alternative is to use the [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) extension 
 
 ## Optimization
 
