@@ -44,7 +44,7 @@ Create a folder with a meaningful name for your project and place the .devcontai
 
 To change to another container, first disconnect the one that is runnning, then open the project folder with VSCode and click the button when prompted. A good alternative is to use the [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) extension.
 
-If developing inside a repository, you may want to add *.devcontainer/\** to /.git/info/exclude.
+If developing inside a repository, you may want to add `.devcontainer/*` to `/.git/info/exclude`.
 
 ## Optimization
 
@@ -54,4 +54,4 @@ In order to mitigate this, you can uninstall the Salesforce Extension pack from 
 
 ## Cleaning the cache
 
-It's a good idea to clean the Docker cache every once in a while, so new versions of packages get installed inside the containers. To do so, you can run *docker builder prune -a*.
+It's a good idea to clean the Docker cache every once in a while, so new versions of packages get installed inside the containers. To do so, you can run `docker builder prune -a`.
