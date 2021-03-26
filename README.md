@@ -44,7 +44,7 @@ Create a folder with a meaningful name for your project and place the .devcontai
 
 To change to another container, first disconnect the one that is runnning, then open the project folder with VSCode and click the button when prompted. A good alternative is to use the [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) extension.
 
-If developing inside a repository, you may want to add `.devcontainer/*` to `/.git/info/exclude`.
+To use in a repository, first clone it and then drop `.devcontainer` folder into the project directory. Then add `.devcontainer/*` to `/.git/info/exclude`.
 
 ## Optimization
 
