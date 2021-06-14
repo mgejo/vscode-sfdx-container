@@ -16,9 +16,6 @@ The files included are a Docker image to build the containers, and a devcontaine
 - SFDX
 - Git
 
-## SFDX plugins installed
-
-- salesforce/lwc-dev-server
 
 ## VSCode extensions installed
 

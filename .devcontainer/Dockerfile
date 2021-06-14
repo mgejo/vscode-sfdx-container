@@ -26,5 +26,3 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends 
     ln -s /usr/bin/node /usr/local/bin/node \
 && \
     npm install -g sfdx-cli \
-&& \
-    sfdx plugins:install @salesforce/lwc-dev-server && sfdx plugins:update
