@@ -27,7 +27,7 @@ While there is an official Salesforce Docker image, it has a couple issues:
 - The prompt is too basic out of the box (refer to the image below)
 
 <p align="center">
-	<img src="https://user-images.githubusercontent.com/66442848/147389933-370c1921-f567-4789-abf5-9dd0ef0bdf2f.png" width="390" >
+	<img src="https://user-images.githubusercontent.com/66442848/147389982-cb7da232-072f-4772-87d0-0284132b88b3.png" width="400" >
 </p>
 
 This project modifies the image from Microsoft's [vscode-remote-try-java](https://github.com/microsoft/vscode-remote-try-java) which comes with Java preinstalled and has a nice prompt out of the box  (refer to the image below).
