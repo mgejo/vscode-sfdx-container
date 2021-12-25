@@ -12,16 +12,16 @@ sfdx is installed using the installation tarball instead of npm, so updating is 
 
 npm is also present in the image, so npm scripts can be run.
 
-The `devcontainer.json` file includes the VS Code extensions that are present in the [official Salesforce image](https://hub.docker.com/r/salesforce/salesforcedx).
+The `devcontainer.json` file includes the VS Code extensions that are present in the [official Salesforce Docker image](https://hub.docker.com/r/salesforce/salesforcedx).
 
 ## Reasoning
-Using containers for development makes it possible to keep a clean computing environment by minimizing the amount of programs installed.
+Using containers for development makes it possible to keep a clean computing environment by minimizing the amount of software installed.
 
 In the case of Salesforce development, it also has the benefits of persisting the default org between sessions on a same project, and uncluttering the list of all authorized orgs, keeping only the connected orgs relevant to each project.
 
 Using containers also allows for the development of software in the same environment it will be deployed on, although this part is not relevant for Salesforce development.
 
-While there is an official Salesforce image, it has a couple issues:
+While there is an official Salesforce Docker image, it has a couple issues:
 - sfdx is installed from npm, which may cause issues when updating
 - The containers using that image are incapable of opening the browser for authorization or as a result of force:org:open
 - The prompt is too basic out of the box (refer to the image below)
