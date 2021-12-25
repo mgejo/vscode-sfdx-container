@@ -26,11 +26,11 @@ While there is an official Salesforce Docker image, it has a couple issues:
 - The containers using that image are incapable of opening the browser for authorization or as a result of force:org:open
 - The prompt is too basic out of the box (refer to the image below)
 
-<img src="https://user-images.githubusercontent.com/66442848/147389392-21d9008f-662a-4c4f-af4c-285996084e6a.png" width="300" >
+<img src="https://user-images.githubusercontent.com/66442848/147389392-21d9008f-662a-4c4f-af4c-285996084e6a.png" width="350" >
 
 This project modifies the image from Microsoft's [vscode-remote-try-java](https://github.com/microsoft/vscode-remote-try-java) which comes with Java preinstalled and has a nice prompt out of the box  (refer to the image below).
 
-<img src="https://user-images.githubusercontent.com/66442848/147389380-2d4e88bc-70de-4ac1-8de7-01fcef5eb98e.png" width="350" >
+<img src="https://user-images.githubusercontent.com/66442848/147389380-2d4e88bc-70de-4ac1-8de7-01fcef5eb98e.png" width="400" >
 
 
 ## Usage
