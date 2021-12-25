@@ -2,53 +2,55 @@
 
 VSCode SFDX Container is a set of configuration files for Docker images used for containerized developer environments, meant for Salesforce developers.
 
-[VSCode reference](https://code.visualstudio.com/docs/remote/containers)
+- [VSCode reference](https://code.visualstudio.com/docs/remote/containers)
 
-[Salesforce reference](https://developer.salesforce.com/tools/vscode/en/user-guide/remote-development/)
+- [Salesforce reference](https://developer.salesforce.com/tools/vscode/en/user-guide/remote-development/)
 
 The files included are a Docker image to build the containers, and a devcontainer.json file with configurations.
 
+sfdx is installed using the installation tarball instead of npm, so updating is done using the `sfdx update` command.
 
-## Programs installed
+npm is also present in the image, so npm scripts can be run.
 
-- Java 11
-- npm
-- SFDX
-- Git
-
-
-## VSCode extensions installed
-
-- [Salesforce Extension Pack](https://marketplace.visualstudio.com/items?itemName=salesforce.salesforcedx-vscode)
-- [Apex Log Analyzer](https://marketplace.visualstudio.com/items?itemName=financialforce.lana)
-- [Apex PMD](https://marketplace.visualstudio.com/items?itemName=chuckjonas.apex-pmd)
-- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-
-To use Prettier, you need to install it through npm.
+The `devcontainer.json` file includes the VS Code extensions that are present in the [official Salesforce image](https://hub.docker.com/r/salesforce/salesforcedx).
 
 ## Reasoning
-When developing multiple projects, it's easy to mistakenly make a commit to the wrong org, because SFDX may preserve the configuration of another project.
+Using containers for development makes it possible to keep a clean computing environment by minimizing the amount of programs installed.
 
-Containerizing the development environment solves this issue, and makes the files from different projects invisible to each other while executing inside the container.
+In the case of Salesforce development, it also has the benefits of persisting the default org between sessions on a same project, and uncluttering the list of all authorized orgs, keeping only the connected orgs relevant to each project.
 
-There is a [Salesforce official image](https://hub.docker.com/r/salesforce/salesforcedx)  for VSCode development, but at least in my computer it can't open the browser for authentication or browsing the org (with force:org:open), and that's why I decided to build my own.
+Using containers also allows for the development of software in the same environment it will be deployed on, although this part is not relevant for Salesforce development.
+
+While there is an official Salesforce image, it has a couple issues:
+- sfdx is installed from npm, which may cause issues when updating
+- The containers using that image are incapable of opening the browser for authorization or as a result of force:org:open
+- The prompt is too basic out of the box (refer to the image below)
+
+<img src="https://user-images.githubusercontent.com/66442848/147389392-21d9008f-662a-4c4f-af4c-285996084e6a.png" width="300" >
+
+This project modifies the image from Microsoft's [vscode-remote-try-java](https://github.com/microsoft/vscode-remote-try-java) which comes with Java preinstalled and has a nice prompt out of the box  (refer to the image below).
+
+<img src="https://user-images.githubusercontent.com/66442848/147389380-2d4e88bc-70de-4ac1-8de7-01fcef5eb98e.png" width="350" >
+
 
 ## Usage
 
-Follow the steps [here](https://code.visualstudio.com/docs/remote/containers)
+Follow the steps [here](https://code.visualstudio.com/docs/remote/containers), using the `.devcontainers` folder from this project.
 
-Create a folder with a meaningful name for your project and place the .devcontainer folder there, then open the project folder with VSCode, wait for the prompt to suggest to reopen in container, and click the corresponding button. The first time you build the image can take some time. Check the extensions tab to install all the extensions you want in the container.
+### Note for Windows users
 
-To change to another container, first disconnect the one that is runnning, then open the project folder with VSCode and click the button when prompted. A good alternative is to use the [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) extension.
+If you are using Docker Desktop, it's a bad idea to reopen a folder in a container, since that will greatly reduce performance for any operation you do. An alternative is to build a container from the Dockerfile and attach the VS Code window to it. The solution that worked best for me was to setup Docker Engine in a WSL distro and reopen the folders in containers from inside that, but there may be a more elegant solution involving Docker Volumes.
 
-To use in a repository, first clone it and then drop `.devcontainer` folder into the project directory. Then add `.devcontainer/*` to `/.git/info/exclude`.
 
 ## Optimization
 
-When you open a SFDX project folder, the Salesforce Extension Pack extensions load before Remote - Container, thus delaying the `Reopen in container` prompt.
+When you open a SFDX project folder, the Salesforce Extension Pack extensions may load before Remote - Container, thus increasing the time before being able to begin working.
 
-In order to mitigate this, you can uninstall the Salesforce Extension pack from VSCode when disconnected from any containers and they will be loaded only when VSCode attaches to a container.
+If you don't have sfdx installed in your host, you will never face this issue. If you do have it installed, uninstalling the Salesforce Extension Pack from the host will solve it.
 
-## Cleaning the cache
+## Known problems and workarounds
 
-It's a good idea to clean the Docker cache every once in a while, so new versions of packages get installed inside the containers. To do so, you can run `docker builder prune -a`.
+- **Authorization callback fails** <br/>
+Use auth:device:login. If authorizing a dev hub, use the flag -d.
+- **force:source:retrieve fails** <br />
+Retrieve from a manifest instead.
