@@ -39,7 +39,10 @@ Follow the steps [here](https://code.visualstudio.com/docs/remote/containers), u
 
 ### Note for Windows users
 
-If you are using Docker Desktop, it's a bad idea to reopen a folder in a container, since that will greatly reduce performance for any operation you do. An alternative is to build a container from the Dockerfile and attach the VS Code window to it. The solution that worked best for me was to setup Docker Engine in a WSL distro and reopen the folders in containers from inside that, but there may be a more elegant solution involving Docker Volumes.
+If you are using Docker Desktop, it's a bad idea to reopen a folder in a container, since that will greatly reduce performance for any operation you do. An alternative is to build a container from the Dockerfile and attach the VS Code window to it.
+
+The solution that worked best for me was to setup Docker Engine in a WSL distro and reopen the folders in containers from inside that, but there may be a more elegant solution involving Docker Volumes.
+
 Also, WSL is a memory hog. Consider limiting how much RAM it can consume by using a [.wslconfig file](https://docs.microsoft.com/en-us/windows/wsl/wsl-config)
 
 
