@@ -9,8 +9,8 @@ RUN wget https://developer.salesforce.com/media/salesforce-cli/sfdx/channels/sta
 RUN mkdir sfdx
 RUN tar xvf sfdx-linux-x64.tar.gz -C sfdx --strip-components 1
 
-# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.195.0/containers/java/.devcontainer/base.Dockerfile
 
+# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.195.0/containers/java/.devcontainer/base.Dockerfile
 FROM mcr.microsoft.com/vscode/devcontainers/java:0-${VARIANT}
 
 # [Option] Install Maven

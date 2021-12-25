@@ -1,37 +1,37 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.195.0/containers/java
 {
-	"name": "sfdx",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			// Update the VARIANT arg to pick a Java version: 8, 11, 14
-			// Append -bullseye or -buster to pin to an OS version.
-			// Use the -bullseye variants on local arm64/Apple Silicon.
-			"VARIANT": "11-bullseye",
-			"NODE_VERSION": "lts/*"
-		}
-	},
+    "name": "sfdx",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            // Update the VARIANT arg to pick a Java version: 8, 11, 14
+            // Append -bullseye or -buster to pin to an OS version.
+            // Use the -bullseye variants on local arm64/Apple Silicon.
+            "VARIANT": "11-bullseye",
+            "NODE_VERSION": "lts/*"
+        }
+    },
 
-	// Set *default* container specific settings.json values on container create.
-	"settings": {
-		"salesforcedx-vscode-apex.java.home": "/docker-java-home"
-	},
+    // Set *default* container specific settings.json values on container create.
+    "settings": {
+        "salesforcedx-vscode-apex.java.home": "/docker-java-home"
+    },
 
-	// Add the IDs of extensions you want installed when the container is created.
+    // Add the IDs of extensions you want installed when the container is created.
     "extensions": [
-		"salesforce.salesforcedx-vscode",
-		"redhat.vscode-xml",
-		"dbaeumer.vscode-eslint",
-		"esbenp.prettier-vscode"
-	  ],
+        "salesforce.salesforcedx-vscode",
+        "redhat.vscode-xml",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+    ],
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "java -version",
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "java -version",
 
-	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "vscode"
+    // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+    "remoteUser": "vscode"
 }
