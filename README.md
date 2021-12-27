@@ -64,10 +64,3 @@ Also, WSL is a memory hog. Consider limiting how much RAM it can consume by usin
 When you open a SFDX project folder, the Salesforce Extension Pack extensions may load before Remote - Container, thus increasing the time before being able to begin working.
 
 If you don't have SFDX installed in your host, you will never face this issue. If you do have it installed, uninstalling the Salesforce Extension Pack from the host will solve it.
-
-## Known problems and workarounds
-
--   **Authorization callback fails** <br/>
-    Use `sfdx auth:device:login`. If authorizing a dev hub, use the flag -d.
--   **sfdx force:source:retrieve fails** <br />
-    Retrieve from a manifest instead.
